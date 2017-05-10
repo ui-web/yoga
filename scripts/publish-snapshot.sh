@@ -12,7 +12,7 @@ IS_SNAPSHOT="$(grep 'VERSION_NAME=[0-9\.]\+-SNAPSHOT' "$BASEDIR/gradle.propertie
 if [ "$TRAVIS_REPO_SLUG" != "facebook/yoga" ]; then
   echo "Skipping repository. Expected project to be 'facebook/yoga', but was '$TRAVIS_REPO_SLUG'."
   exit
-elif [ "$TRAVIS_BRANCH" != "master" ]; then
+elif [ "$TRAVIS_BRANCH" != "snapshot" ]; then # TODO!
   echo "Skipping build. Expected branch name to be 'master', but was '$TRAVIS_BRANCH'."
   exit
 elif [ "$TRAVIS_PULL_REQUEST" != "false" ]; then

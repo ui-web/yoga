@@ -94,7 +94,8 @@ script:
   # Java
   - |
     if [[ $TARGET = "java" ]]; then
-      buck test --verbose 0 //java:java
+      buck test --verbose 0 //java:java &&
+      scripts/publish-snapshot.sh
     fi
 
   # .NET
