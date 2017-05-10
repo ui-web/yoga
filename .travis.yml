@@ -9,6 +9,8 @@ os: osx
 osx_image: xcode8.2
 language: cpp
 compiler: clang
+cache:
+  - /usr/local/Cellar
 
 env:
   - TARGET=c
