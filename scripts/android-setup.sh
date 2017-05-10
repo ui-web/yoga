@@ -11,7 +11,7 @@ function download() {
 
 function installsdk() {
   PROXY_ARGS=""
-  if [[ -z "$https_proxy" ]]; then
+  if [[ ! -z "$https_proxy" ]]; then
     PROXY_HOST="$(cut -d : "$https_proxy" -f 1,1)"
     PROXY_PORT="$(cut -d : "$https_proxy" -f 2,2)"
     PROXY_ARGS="--proxy=http --proxy_host=$PROXY_HOST --proxy_port=$PROXY_PORT"
