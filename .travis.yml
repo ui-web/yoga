@@ -98,8 +98,7 @@ script:
   # Java
   - |
     if [[ $TARGET = "java" ]]; then
-      buck test --verbose 0 //java:java &&
-      scripts/publish-snapshot.sh
+      buck test --verbose 0 //java:java
     fi
 
   # .NET
@@ -119,7 +118,8 @@ script:
   # Android
   - |
     if [[ $TARGET = "android" ]]; then
-      buck build --verbose 0 //android/sample:sample
+      buck build --verbose 0 //android/sample:sample &&
+      scripts/publish-snapshot.sh
     fi
 
   # JavaScript
