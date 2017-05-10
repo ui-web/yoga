@@ -17,7 +17,7 @@ function installsdk() {
     PROXY_ARGS="--proxy=http --proxy_host=$PROXY_HOST --proxy_port=$PROXY_PORT"
   fi
 
-  echo y | sdkmanager $PROXY_ARGS $@
+  echo y | $ANDROID_HOME/tools/bin/sdkmanager $PROXY_ARGS $@
 }
 
 function installAndroidSDK {
