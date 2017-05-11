@@ -17,7 +17,7 @@ function installsdk() {
     PROXY_ARGS="--proxy=http --proxy_host=$PROXY_HOST --proxy_port=$PROXY_PORT"
   fi
 
-  echo y | $ANDROID_HOME/tools/bin/sdkmanager $PROXY_ARGS $@
+  yes | $ANDROID_HOME/tools/bin/sdkmanager $PROXY_ARGS $@
 }
 
 function installAndroidSDK {
@@ -29,6 +29,7 @@ function installAndroidSDK {
   export ANDROID_HOME=$HOME/android-sdk
   export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$PATH"
 
+  mkdir -p $ANDROID_HOME/licenses/
   echo > $ANDROID_HOME/licenses/android-sdk-license
   echo -n 8933bad161af4178b1185d1a37fbf41ea5269c55 > $ANDROID_HOME/licenses/android-sdk-license
 
