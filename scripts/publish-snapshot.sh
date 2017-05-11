@@ -21,5 +21,5 @@ elif [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
 elif [ "$IS_SNAPSHOT" == "" ]; then
   echo >&2 "Skipping build. Given build doesn't appear to be a SNAPSHOT release."
 else
-  "$BASEDIR/gradlew" uploadArchives
+  env TERMINAL=dumb "$BASEDIR/gradlew" uploadArchives
 fi
