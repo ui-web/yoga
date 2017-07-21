@@ -16,11 +16,11 @@ cache:
     - $HOME/android-ndk
 
 env:
-  - TARGET=c
-  - TARGET=java
-  - TARGET=net
-  - TARGET=ios
-  - TARGET=js
+  # - TARGET=c
+  # - TARGET=java
+  # - TARGET=net
+  # - TARGET=ios
+  # - TARGET=js
   - TARGET=android
 
 before_install:
