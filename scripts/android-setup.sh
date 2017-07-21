@@ -25,20 +25,20 @@ function installAndroidSDK {
   export ANDROID_NDK_REPOSITORY=$HOME/android-ndk
   export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$PATH"
 
-  # if [[ ! -d "$ANDROID_HOME" ]]; then
+  if [[ ! -d "$ANDROID_HOME" ]]; then
     TMP=/tmp/sdk$$.zip
     download 'https://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip' $TMP
     unzip -qod $ANDROID_HOME $TMP
     rm $TMP
-  # fi
+  fi
 
-  # if [[ ! -d "$ANDROID_NDK_REPOSITORY" ]]; then
+  if [[ ! -d "$ANDROID_NDK_REPOSITORY" ]]; then
     TMP=/tmp/ndk$$.zip
     mkdir -p $ANDROID_NDK_REPOSITORY
     download 'https://dl.google.com/android/repository/android-ndk-r13b-darwin-x86_64.zip' $TMP
     unzip -qod $ANDROID_NDK_REPOSITORY $TMP
     rm $TMP
-  # fi
+  fi
 
   mkdir -p $ANDROID_HOME/licenses/
   echo > $ANDROID_HOME/licenses/android-sdk-license
